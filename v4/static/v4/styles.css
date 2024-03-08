@@ -1,0 +1,107 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    align-self: center;
+    margin-top: 120px;
+    display: flex;
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 7rem;
+}
+
+.main {
+    margin-top: 40px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.formDate {
+    height: 80px;
+    padding-left: 30px;
+    padding-right: 40px;
+    font-size: 1.5rem;
+    margin-right: 40px;
+}
+
+.formButton {
+    height: 75px;
+    width: 75px;
+    border-radius: 100%;
+    font-size: 2rem;
+    background-color: RGB(255, 64, 175);
+}
+
+.formButton:hover {
+    background-color: RGB(255, 211, 91);
+}
+
+.bodyOutput {
+    background-color: black;
+    margin-top: 50px;
+}
+.countdown {
+    height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.countdown2 {
+    width: auto !important; 
+}
+
+.numeros {
+    text-align: right;
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6rem;
+}
+
+.letras {
+    text-align: left !important;
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6rem;
+    margin-right: 100px;
+}
+
+.errorTexto {
+    align-self: center;
+    font-family: "Sixtyfour", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: RGB(255, 64, 175);
+}
+
+.returnButton {
+    height: 75px;
+    width: 75px;
+    border-radius: 100%;
+    font-size: 2rem;
+    background-color: RGB(255, 64, 175);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.returnButton:hover {
+    background-color: RGB(255, 211, 91);
+}
