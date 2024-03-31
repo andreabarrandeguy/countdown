@@ -133,6 +133,7 @@ body {
     font-weight: 400;
     font-size: 3rem;
     color: RGB(255, 64, 175);
+    text-align: center;
 }
 
 .output_rows {
@@ -273,6 +274,10 @@ body {
         font-size: 1.5rem;
     }
 
+    .bodyOutput h1 {
+        font-size: 2rem;
+    }
+
     .numeros {
         font-size: 3rem;
     }
@@ -314,6 +319,10 @@ body {
         height: 50px;
         width: 50px;
         font-size: 1.5rem;
+    }
+
+    .bodyOutput h1 {
+        font-size: 2.5rem;
     }
 
     .numeros {
