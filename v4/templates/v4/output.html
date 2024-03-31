@@ -11,50 +11,123 @@
     <link href="{% static 'v4/styles.css' %}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Sixtyfour&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/858b52eeaa.js" crossorigin="anonymous"></script>
     <script src="{% static 'v4/countdown.js' %}"></script>
-    <title>Countdown V4</title>
+    <title>Countdown | {{ title }}</title>
 </head>
 
 <body class="bodyOutput">
-    <input value="{{ td }}" id="targetdate" hidden>
-    <p id="countdown" hidden></p>
+    <div class="bodyOutput_container">
+        <h1>{{ title }}</h1>
 
-    <div class="container text-center">
-        <div class="row">
-            <div class="col numeros">
-                <p id="days"></p>
+        <div class="output_rows">
+            <div class="output_row">
+                <div class="output_row_element numeros">
+                    <p id="days"></p>
+                </div>
+                <div class="output_row_element numeros">
+                    <p id="hours"></p>
+                </div>
+                <div class="output_row_element numeros">
+                    <p id="minutes"></p>
+                </div>
+                <div class="output_row_element numeros">
+                    <p id="seconds"></p>
+                </div>
             </div>
-            <div class="col letras">
-                dias
+
+            <div class="output_row">
+                <div class="output_row_element letras">
+                    <p id="days_text"></p>
+                </div>
+                <div class="output_row_element letras">
+                    <p id="hours_text"></p>
+                </div>
+                <div class="output_row_element letras">
+                    <p id="minutes_text"></p>
+                </div>
+                <div class="output_row_element letras">
+                    <p id="seconds_text"></p>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col numeros">
-                <p id="hours"></p>
-            </div>
-            <div class="col letras">
-                horas
-            </div>
-        </div>
-        <div class="row">
-            <div class="col numeros">
-                <p id="minutes"></p>
-            </div>
-            <div class="col letras">
-                minutos
-            </div>
-        </div>
-        <div class="row">
-            <div class="col numeros">
-                <p id="seconds"></p>
-            </div>
-            <div class="col letras">
-                segundos
-            </div>
+
+        <div class="outputButtons">
+            <a href="{% url 'indexV4' %}" class="outputButton"><i class="fa-solid fa-rotate-left"></i></a>
+            <a href="#" class="outputButton" id="copyLinkButton"><i class="fa-solid fa-share"></i></a>
         </div>
     </div>
+
+    <script>
+        const Y = {{ Y }};
+        const m = {{ m }};
+        const d = {{ d }};
+        const H = {{ H }};
+        const M = {{ M }};
+
+        const targetDate = new Date(Y, m - 1, d, H, M).getTime();
+
+        function countdown() {
+            let x = setInterval(function () {
+
+                let now = new Date().getTime();
+
+                let t = targetDate - now;
+
+                let days = Math.floor(t / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+                document.getElementById("days_text").innerHTML = (days === 1) ? "day" : "days";
+                document.getElementById("hours_text").innerHTML = (hours === 1) ? "hour" : "hours";
+                document.getElementById("minutes_text").innerHTML = (minutes === 1) ? "minute" : "minutes";
+                document.getElementById("seconds_text").innerHTML = (seconds === 1) ? "second" : "seconds";
+
+                if (t < 0) {
+                    clearInterval(x);
+                    document.getElementById("days").innerHTML = '0';
+                    document.getElementById("hours").innerHTML = '0';
+                    document.getElementById("minutes").innerHTML = '0';
+                    document.getElementById("seconds").innerHTML = '0';
+                    alert('Countdown ended! \uD83E\uDD73');
+                }
+            }, 1000);
+        }
+        if (window.addEventListener) {
+            window.addEventListener('load', countdown, false);
+        } else {
+            window.attachEvent('onload', countdown);
+        }
+
+        const copyLinkButton = document.getElementById('copyLinkButton');
+
+        copyLinkButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const currentURL = window.location.href;
+
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = currentURL;
+
+            document.body.appendChild(tempTextArea);
+
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            document.body.removeChild(tempTextArea);
+
+            alert('Link copied. Share it!');
+        });
+
+    </script>
 </body>
+
 
 </html>
