@@ -26,7 +26,12 @@ body {
 .bodyInput h1 {
     align-self: center;
     display: flex;
-    font-family: "Honk", Arial, Helvetica, sans-serif;
+    font-family: "VT323", monospace;
+    color: black;
+    background: -webkit-linear-gradient(270deg,#f9ff36 0%, #f500ff 120%);
+    border-radius: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -154,9 +159,18 @@ body {
 }
 
 .numeros {
-    font-family: "Honk", Arial, Helvetica, sans-serif;
+    font-family: "VT323", monospace;
     font-weight: 400;
     font-size: 6rem;
+    color: black;
+    border-radius: 24px;
+    text-align: -webkit-center;
+}
+
+.numero {
+    background: -webkit-linear-gradient(270deg,#f9ff36 0%, #f500ff 120%);
+    width: 140px;
+    border-radius: 24px;
 }
 
 .letras {
@@ -208,7 +222,12 @@ body {
 .bodyError h1 {
     align-self: center;
     display: flex;
-    font-family: "Honk", Arial, Helvetica, sans-serif;
+    font-family: "VT323", monospace;
+    color: black;
+    background: -webkit-linear-gradient(270deg,#f9ff36 0%, #f500ff 120%);
+    border-radius: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -246,7 +265,7 @@ body {
 }
 
 /*Media Queries*/
-@media screen and (min-width: 0px) and (max-width: 408px) {
+@media screen and (min-width: 0px) and (max-width: 434px) {
     .bodyInput h1 {
         font-size: 4rem;
     }
@@ -282,6 +301,10 @@ body {
         font-size: 3rem;
     }
 
+    .numero {
+        width: 50px;
+    }
+
     .letras {
         font-size: 0.5rem;
     }
@@ -293,7 +316,7 @@ body {
     }
 }
 
-@media screen and (min-width: 409px) and (max-width: 486px) {
+@media screen and (min-width: 435px) and (max-width: 608px) {
     .bodyInput h1 {
         font-size: 5rem;
     }
@@ -329,6 +352,10 @@ body {
         font-size: 4rem;
     }
 
+    .numero {
+        width: 70px;
+    }
+
     .letras {
         font-size: 0.5rem;
     }
@@ -340,13 +367,17 @@ body {
     }
 }
 
-@media screen and (min-width: 487px) and (max-width: 637px) {
+@media screen and (min-width: 609px) and (max-width: 843px) {
     .bodyInput h1 {
         font-size: 6rem;
     }
 
     .numeros {
         font-size: 5rem;
+    }
+
+    .numero {
+        width: 100px;
     }
 
     .letras {
