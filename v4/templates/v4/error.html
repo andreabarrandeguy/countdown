@@ -2,28 +2,42 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'v4/styles.css' %}" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&family=VT323&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/858b52eeaa.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover the Ultimate Countdown Experience: Live updates and dynamic shareable links—no homepage needed!"
+    />
+    <meta name="keywords" content="Countdown, dynamic url, dynamic link" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'v4/countdown.ico' %}"
+      type="image/x-icon"
+    />
+    <link href="{% static 'v4/styles.css' %}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sixtyfour&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/858b52eeaa.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Countdown | Error</title>
-</head>
+  </head>
 
-<body class="bodyError">
+  <body class="bodyError">
     <div class="bodyError_container">
-        <div style="display: flex; flex-direction: column;">
-            <h1>Error</h1>
-            <p class="errorTexto">{{ error }}</p>
-        </div>
-        <div class="returnButton">
-            <a href="{% url 'indexV4' %}"><i class="fa-solid fa-arrow-left"></i></a>
-        </div>
+      <div style="display: flex; flex-direction: column">
+        <h1>Error</h1>
+        <p class="errorTexto">{{ error }}</p>
+      </div>
+      <div class="returnButton">
+        <a href="{% url 'indexV4' %}"><i class="fa-solid fa-arrow-left"></i></a>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
